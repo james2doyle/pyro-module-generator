@@ -3,6 +3,8 @@ PyroCMS Module Generator
 
 This generator will allow you to fill in a form and generate a module. It is built with [Laravel](http://laravel.com/) because eventually that is what PyroCMS is going to use!
 
+[VIDEO DEMO](http://www.youtube.com/watch?v=g7moZUqIwHU)
+
 ### Usage
 
 Just throw it in your localhost and point your browser to it. There is no database. It just writes and renames files for you.
