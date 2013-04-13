@@ -1,0 +1,27 @@
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
+
+.clearfix:after {
+	clear: both;
+}
+
+/* IE6/7 support */
+.clearfix {
+	*zoom: 1;
+}
+
+fieldset input {
+	float:left;
+	clear: both;
+}
+
+fieldset .fields {
+	margin-bottom: 1em;
+}
+
+.center {
+  text-align: center;
+}
