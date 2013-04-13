@@ -7,6 +7,8 @@ This generator will allow you to fill in a form and generate a module. It is bui
 
 Just throw it in your localhost and point your browser to it. There is no database. It just writes and renames files for you.
 
+[!module form](https://github.com/james2doyle/pyro-module-generator/)
+
 ### Todo
 
 * More than just text and textarea forms
