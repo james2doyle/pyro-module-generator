@@ -76,7 +76,11 @@ class Home_Controller extends Base_Controller {
 	{
 		$validation_fields = '';
 		foreach ($fields as $field) {
-			$reqs = implode('|', $field['validation']);
+			if (isset($field['validation'])) {
+				$reqs = implode('|', $field['validation']);
+			} else {
+				$reqs = '';
+			}
 			$validation_fields .= "array(
 \t'field' => '$field[text]',
 \t'label' => '".ucfirst($field['text'])."',
