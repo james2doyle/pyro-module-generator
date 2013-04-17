@@ -2,6 +2,7 @@
 
 // Route::controller(Controller::detect());
 Route::get('/', 'home@index');
+Route::get('finished/(:any)', 'home@finished');
 Route::get('template/(:any)', 'home@template');
 Route::post('makeTemplate', 'home@makeTemplate');
 
