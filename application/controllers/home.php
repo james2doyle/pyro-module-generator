@@ -64,8 +64,8 @@ class Home_Controller extends Base_Controller {
 	}
 
 	private function clean($nametoclean) {
-		$fixes = array(' ','_','-');
-		return strtolower(str_replace($fixes, '',$nametoclean));
+		$fixes = array(' ','-');
+		return strtolower(str_replace($fixes, '_',$nametoclean));
 	}
 
 	private function str_replace_assoc(array $replace, $subject) {
