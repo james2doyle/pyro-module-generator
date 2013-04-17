@@ -45,6 +45,11 @@ class Home_Controller extends Base_Controller {
 			'views/admin/form.php',
 			'views/admin/index.php'
 			);
+		// conditional front end controller stuff
+		if ($input['frontend'] == 'true') {
+			array_push($filearray, 'controllers/sample.php');
+			array_push($filearray, 'views/index.php');
+		}
 		File::cpdir('./application/generator/module_full','./application/generator/generated/'.$info['{module_name_l}']);
 		$moduleurl = './application/generator/generated/'.$info['{module_name_l}'];
 		for ($i = 0; $i <count($filearray); $i++) {
@@ -59,6 +64,11 @@ class Home_Controller extends Base_Controller {
 		// rename the specific files that are name sensitive
 		rename($moduleurl.'/language/english/sample_lang.php', $moduleurl.'/language/english/'.$info['{module_name_l}'].'_lang.php');
 		rename($moduleurl.'/models/sample_m.php', $moduleurl.'/models/'.$info['{module_name_l}'].'_m.php');
+		if ($input['frontend'] == 'true') {
+			// rename the extra front end stuff if applicable
+			rename($moduleurl.'/controllers/sample.php', $moduleurl.'/controllers/'.$info['{module_name_l}'].'.php');
+			rename($moduleurl.'/css/sample.css', $moduleurl.'/css/'.$info['{module_name_l}'].'.css');
+		}
 		// return to the homepage
 		return Redirect::to_action('home@index');
 	}
@@ -82,20 +92,20 @@ class Home_Controller extends Base_Controller {
 				$reqs = '';
 			}
 			$validation_fields .= "array(
-\t'field' => '$field[text]',
-\t'label' => '".ucfirst($field['text'])."',
-\t'rules' => '$reqs',
-),\n";
-		}
-		return $validation_fields;
-	}
+				\t'field' => '$field[text]',
+				\t'label' => '".ucfirst($field['text'])."',
+				\t'rules' => '$reqs',
+				),\n";
+}
+return $validation_fields;
+}
 
-	private function makeDetails($fields)
-	{
-		$details_fields = '';
-		foreach ($fields as $field) {
-			$details_fields .= "'$field[text]' => array(
-\t'type' => '$field[dbtype]',";
+private function makeDetails($fields)
+{
+	$details_fields = '';
+	foreach ($fields as $field) {
+		$details_fields .= "'$field[text]' => array(
+			\t'type' => '$field[dbtype]',";
 			if ($field['constraint'] !== '') {
 				$details_fields .= "\n\t'constraint' => '$field[constraint]',";
 			}
@@ -106,32 +116,32 @@ class Home_Controller extends Base_Controller {
 				$details_fields .= "\n\t'null' => true,";
 			}
 			$details_fields .= "\n),\n";
-		}
-		return $details_fields;
-	}
+}
+return $details_fields;
+}
 
-	private function makeModel($fields)
-	{
-		$model_fields = '';
-		foreach ($fields as $field) {
-			$model_fields .= "'$field[text]' => \$input['$field[text]'],\n";
-		}
-		return $model_fields;
+private function makeModel($fields)
+{
+	$model_fields = '';
+	foreach ($fields as $field) {
+		$model_fields .= "'$field[text]' => \$input['$field[text]'],\n";
 	}
+	return $model_fields;
+}
 
-	private function makeAdminForms($fields)
-	{
-		$admin_fields = '';
-		foreach ($fields as $field) {
-			$admin_fields .= '<li>
-<label for="'.$field['text'].'">'.ucfirst($field['text']).'</label>
-	<div class="input">
+private function makeAdminForms($fields)
+{
+	$admin_fields = '';
+	foreach ($fields as $field) {
+		$admin_fields .= '<li>
+		<label for="'.$field['text'].'">'.ucfirst($field['text']).'</label>
+		<div class="input">
 		<?php echo form_'.$field['type'].'("'.$field['text'].'", set_value("'.$field['text'].'", $'.$field['text'].')); ?>
-	</div>
-</li>';
-		}
-		return $admin_fields;
+		</div>
+		</li>';
 	}
+	return $admin_fields;
+}
 
 }
 
