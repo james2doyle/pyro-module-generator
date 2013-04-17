@@ -70,7 +70,12 @@ class Home_Controller extends Base_Controller {
 			rename($moduleurl.'/css/sample.css', $moduleurl.'/css/'.$info['{module_name_l}'].'.css');
 		}
 		// return to the homepage
-		return Redirect::to_action('home@index');
+		return Redirect::to('finished/'.$info['{module_name_l}']);
+	}
+
+	public function action_finished($module)
+	{
+		return View::make('home.finished')->with('module', $module);
 	}
 
 	private function clean($nametoclean) {
