@@ -33,7 +33,7 @@ class {module_name_l} extends Public_Controller
      public function index()
      {
       // bind the information to a key
-      $data['{module_name_l}s'] = (array)$this->{module_name_l}_m->get_all();
+      $data['{module_name_l}'] = (array)$this->{module_name_l}_m->get_all();
       // Build the page
       $this->template->title($this->module_details['name'])
       ->build('index', $data);
