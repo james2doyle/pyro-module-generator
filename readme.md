@@ -1,7 +1,9 @@
 PyroCMS Module Generator
 =======================
 
-### Version 1.1
+### Version 1.2
+
+[Live version](http://pyromg.aws.af.cm/)
 
 This generator will allow you to fill in a form and generate a module. It is built with [Laravel](http://laravel.com/) because eventually that is what PyroCMS is going to use!
 
@@ -15,12 +17,24 @@ Just throw it in your localhost and point your browser to it. There is no databa
 
 ![fields form](https://raw.github.com/james2doyle/pyro-module-generator/master/fields.png)
 
+#### Warning
+
+As of version 1.2:
+
+The generated module is now in the `public/generated/` folder.
+
+Zip compression is disabled by default. To enable zip compression simply uncomment the proper lines(73-74) in the home controller.
+
+```php
+// uncomment to enable zip compression
+$this->compressDir($info['{module_name_l}']);
+```
+
 ### Todo
 
 * More than just text and textarea forms
 * Clean up
 * Fix dropdown lists on ajax get
-
 
 ### License
 
