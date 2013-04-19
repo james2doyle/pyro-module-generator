@@ -3,7 +3,7 @@
 <header class="center">
 <h1>PyroCMS Module Generator</h1>
 <h4>Created by <a target="_blank" href="https://twitter.com/james2doyle">James Doyle</a></h4>
-<h5>Version 1.1</h5>
+<h5>Version 1.2</h5>
 </header>
 <h3>Module Information</h3>
 <?php echo Form::open('makeTemplate', 'POST', array('id'=>'form')); ?>
