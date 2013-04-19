@@ -70,14 +70,15 @@ class Home_Controller extends Base_Controller {
 			rename($moduleurl.'/controllers/sample.php', $moduleurl.'/controllers/'.$info['{module_name_l}'].'.php');
 			rename($moduleurl.'/css/sample.css', $moduleurl.'/css/'.$info['{module_name_l}'].'.css');
 		}
-		$this->compressDir($info['{module_name_l}']);
+		// uncomment to enable zip compression
+		// $this->compressDir($info['{module_name_l}']);
 		// return to the homepage
 		return Redirect::to('finished/'.$info['{module_name_l}']);
 	}
 
 	public function action_finished($module)
 	{
-		return View::make('home.finished')->with(array('module'=> $module, 'url' => URL::base()));
+		return View::make('home.finished')->with(array('module'=> $module, 'url' => URL::base(), 'zip' => false));
 	}
 
 	private function clean($nametoclean) {
