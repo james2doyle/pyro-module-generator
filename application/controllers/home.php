@@ -50,8 +50,9 @@ class Home_Controller extends Base_Controller {
 			array_push($filearray, 'controllers/sample.php');
 			array_push($filearray, 'views/index.php');
 		}
-		File::cpdir('./application/generator/module_full','./application/generator/generated/'.$info['{module_name_l}']);
-		$moduleurl = './application/generator/generated/'.$info['{module_name_l}'];
+		File::cpdir('./application/generator/module_full','./public/generated/'.$info['{module_name_l}']);
+		// where is the module generated
+		$moduleurl = './public/generated/'.$info['{module_name_l}'];
 		for ($i = 0; $i <count($filearray); $i++) {
 			$filedestination = $moduleurl.'/'.$filearray[$i];
 			// load the template = module_full/targetfile
@@ -69,13 +70,14 @@ class Home_Controller extends Base_Controller {
 			rename($moduleurl.'/controllers/sample.php', $moduleurl.'/controllers/'.$info['{module_name_l}'].'.php');
 			rename($moduleurl.'/css/sample.css', $moduleurl.'/css/'.$info['{module_name_l}'].'.css');
 		}
+		$this->compressDir($info['{module_name_l}']);
 		// return to the homepage
 		return Redirect::to('finished/'.$info['{module_name_l}']);
 	}
 
 	public function action_finished($module)
 	{
-		return View::make('home.finished')->with('module', $module);
+		return View::make('home.finished')->with(array('module'=> $module, 'url' => URL::base()));
 	}
 
 	private function clean($nametoclean) {
@@ -146,6 +148,15 @@ private function makeAdminForms($fields)
 		</li>';
 	}
 	return $admin_fields;
+}
+
+private function compressDir($modulename)
+{
+	$url = './public/generated/';
+	// HZip class to create the zip file
+	HZip::zipDir($url.$modulename, $url.$modulename.'.zip');
+	// remove the directory we just used as a source
+	File::rmdir($url.$modulename);
 }
 
 }
