@@ -36,4 +36,4 @@ intermediate
 publish
 .idea
 
-application/generator/generated
+public/generated
