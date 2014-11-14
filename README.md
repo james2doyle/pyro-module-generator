@@ -24,7 +24,7 @@ If you you **used a custom url** (and didn't just clone as `pyro-module-generato
 
 The generated module is in the `public/generated/` folder.
 
-![screenshot](https://raw.githubusercontent.com/james2doyle/pyro-module-generator/master/screenshot.jpg)
+![screenshot](https://raw.githubusercontent.com/james2doyle/pyro-module-generator/master/screenshot.jpeg)
 
 ### Todo
 
