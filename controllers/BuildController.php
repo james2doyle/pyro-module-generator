@@ -58,7 +58,7 @@ class BuildController {
       rename($moduleurl.'/controllers/sample.php', $moduleurl.'/controllers/'.$info['{module_name_l}'].'.php');
       rename($moduleurl.'/css/sample.css', $moduleurl.'/css/'.$info['{module_name_l}'].'.css');
     }
-    // uncomment to enable zip compression
+    // comment out to disable zip compression
     $this->Zip($url.$info['{module_name_l}'], $url.$info['{module_name_l}'].'.zip');
     return $info['{module_name_l}'].'.zip';
   }
