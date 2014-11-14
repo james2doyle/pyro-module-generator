@@ -82,7 +82,7 @@ class BuildController {
     foreach ($fields as $field) {
       if (isset($field['text'])) {
         $reqs = (isset($field['validation'])) ? implode('|', $field['validation']) : '';
-        $validation_fields .= sprintf("\tarray(\n\t'field' => '$field[text]',\n\t'label' => '%s',\n\t'rules' => '%s',),\n", ucfirst($field['text']), $reqs);
+        $validation_fields .= sprintf("\tarray(\n\t'field' => '%s',\n\t'label' => '%s',\n\t'rules' => '%s',),\n", $this->clean($field['text']), ucfirst($field['text']), $reqs);
       }
     }
     return $validation_fields;
