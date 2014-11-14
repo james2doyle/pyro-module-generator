@@ -13,6 +13,8 @@ This generator will allow you to fill in a form and generate a module. It is bui
 
 Just throw it in your localhost and point your browser to it. There is no database. It just writes and renames files for you.
 
+If you you **used a custom url** (and didn't just clone as `pyro-module-generator`), then open the [config/config.php and change the baseUri](https://github.com/james2doyle/pyro-module-generator/blob/master/config/config.php#L7).
+
 #### Genrated Modules
 
 The generated module is in the `public/generated/` folder.
