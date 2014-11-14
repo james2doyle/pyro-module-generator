@@ -1,0 +1,14 @@
+/* <tbody class="ui-sortable-container"> */
+.ui-sortable-container {
+  overflow: auto;
+  -ms-overflow-x: hidden;
+  overflow-x: hidden;
+}
+
+.ui-sortable-container tr:hover {
+  cursor: move;
+}
+
+.ui-sortable-placeholder {
+  height: 43px;
+}
