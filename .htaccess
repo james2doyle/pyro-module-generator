@@ -1,3 +1,4 @@
+DirectoryIndex public/index.php
 <IfModule mod_rewrite.c>
 	RewriteEngine on
 	RewriteRule  ^$ public/    [L]
