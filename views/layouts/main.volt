@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>PyroCMS Module Generator</title>
-  <meta name="description" content="Phalcon is a web framework delivered as a C extension providing high performance and lower resource consumption"/>
-  <meta name="author" content="Phalcon Team" />
+  <meta name="description" content="PyroCMS Module generator allows module creation for Pyrocms version 2.2 and up"/>
+  <meta name="author" content="WARPAINT Media" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   {{ stylesheet_link("css/bootstrap.min.css") }}
