@@ -3,6 +3,8 @@ PyroCMS Module Generator
 
 Created by [WARPAINT Media](http://warpaintmedia.ca/ "Created By WARPAINT Media").
 
+[Live hosted application!](dev.warpaintmedia.ca/pyro-module-generator/ "PyroCMS Module Generator Website")
+
 **Version 2.0**
 
 [View Source On Github](https://github.com/james2doyle/pyro-module-generator "PyroCMS Module Generator On Github")

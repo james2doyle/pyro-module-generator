@@ -1,6 +1,8 @@
 PyroCMS Module Generator
 =======================
 
+[Live hosted application!](dev.warpaintmedia.ca/pyro-module-generator/ "PyroCMS Module Generator Website")
+
 ### Version 2.0
 
 This generator will allow you to fill in a form and generate a module. It is built with [PhalconPHP](http://phalconphp.com/en/) because phalcon is crazy fast and easy to make small apps with.
