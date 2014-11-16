@@ -19,5 +19,5 @@ Created by [WARPAINT Media](http://warpaintmedia.ca/ "Created By WARPAINT Media"
 * `order` field by default
 * functionality for drag and drop table order (add `ui-sortable-container` to `tbody` in admin index view)
 * basic function for files included but commented out
-* `\_form\_data` function for passing data to form views
+* `_form_data` function for passing data to form views
 * settings table included, but commented out
