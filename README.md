@@ -13,27 +13,29 @@ This generator will allow you to fill in a form and generate a module. It is bui
 
 ### Usage
 
-Just throw it in your localhost and point your browser to it. There is no database. It just writes and renames files for you.
+Just throw it in your localhost root and point your browser to it. There is no database, since it just writes and renames files for you.
 
-If you you **used a custom url** (and didn't just clone as `pyro-module-generator`), then open the [config/config.php and change the baseUri](https://github.com/james2doyle/pyro-module-generator/blob/master/config/config.php#L7).
+If you have **used a custom folder name** (and didn't just clone as `pyro-module-generator`), then open the [config/config.php and change the baseUri](https://github.com/james2doyle/pyro-module-generator/blob/master/config/config.php#L7) to match that folder name.
 
 ##### Writeable Folders
+
+We need to run `chmod -R 777 cache/volt` and `chmod -R 777 public/generated` if you have write errors.
 
 * cache/volt/
 * public/generated/
 
 #### Genrated Modules
 
-**Included in all generated modules:**
+**Included in all generated modules is the following setup:**
 
-* includes `ID` field by default
-* includes `order` field by default
-* includes functionality for drag and drop table order (add `ui-sortable-container` to `tbody` in admin index view)
+* `ID` field by default
+* `order` field by default
+* functionality for drag and drop table order (add `ui-sortable-container` to `tbody` in admin index view)
 * basic function for files included but commented out
-* \_form\_data function for passing data to form views
-* settings table included but commented out
+* `\_form\_data` function for passing data to form views
+* settings table included, but commented out
 
-The generated module is in the `public/generated/` folder.
+The generated module gets put in the `public/generated/` folder. As well as the Zip file.
 
 ![screenshot](https://raw.githubusercontent.com/james2doyle/pyro-module-generator/master/screenshot.jpeg)
 
