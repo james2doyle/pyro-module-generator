@@ -6,7 +6,7 @@ return new \Phalcon\Config(array(
 		'viewsDir'       => __DIR__ . '/../views/',
 		'baseUri'        => '/pyro-module-generator/',
 		'compiledPath'   => __DIR__ . '/../cache/volt/',
-		'compileAlways'  => true
+		'compileAlways'  => false
 		)
 	));
 
