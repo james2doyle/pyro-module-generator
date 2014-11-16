@@ -27,6 +27,7 @@
       <p>&copy; <a href="http://twitter.com/james2doyle" title="James Doyle on Twitter" target="_blank">James Doyle</a> and <a href="http://warpaintmedia.ca" title="WARPAINT Media" target="_blank">WARPAINT Media</a> <?php echo date('Y') ?></p>
     </footer>
   </div>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   {{ javascript_include("js/main.js") }}
 </body>
