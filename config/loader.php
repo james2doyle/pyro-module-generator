@@ -5,8 +5,15 @@
  */
 $loader = new \Phalcon\Loader();
 
-$loader->registerDirs(
-	array(
-		$config->application->controllersDir
+$loader->registerDirs(array(
+	$config->application->controllersDir
 	)
-)->register();
+);
+
+$loader->registerNamespaces(
+	array(
+		'App\Controllers' => $config->application->controllersDir
+		)
+	);
+
+$loader->register();
