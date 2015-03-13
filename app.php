@@ -4,7 +4,7 @@
  * Landing page
  */
 $app->get('/', function () use ($app) {
-  $app->view->count = 0;
+	$app->view->count = 0;
 	echo $app->render('index/index');
 });
 
@@ -12,31 +12,31 @@ $app->get('/', function () use ($app) {
  * Generate a new set of fields to use
  */
 $app->post('/get_form', function () use ($app) {
-  $template = $app->render('partials/form', array(
-    'count' => (int)$app->request->getPost('count')
-    ));
-  $app->response->setContentType('application/json', 'UTF-8');
-  $app->response->setJsonContent(array(
-    "status" => "OK",
-    'message' => $template
-    ));
-  $app->response->send();
+	$template = $app->render('partials/form', array(
+		'count' => (int)$app->request->getPost('count')
+		));
+	$app->response->setContentType('application/json', 'UTF-8');
+	$app->response->setJsonContent(array(
+		"status" => "OK",
+		'message' => $template
+		));
+	$app->response->send();
 });
 
 /**
  * Form Submission
  */
 $app->post('/submit', function () use ($app) {
-  $builder = new BuildController();
-  $zip = $builder->makeTemplate($app->request->getPost());
-  $app->response->redirect('complete/'.$zip)->sendHeaders();
+	$builder = new App\Controllers\BuildController();
+	$zip = $builder->makeTemplate($app->request->getPost());
+	$app->response->redirect('complete/'.$zip)->sendHeaders();
 });
 
 /**
  * Error building the module
  */
 $app->get('/error', function () use ($app) {
-  echo $app->render('errors/error');
+	echo $app->render('errors/error');
 });
 
 /**
@@ -44,8 +44,8 @@ $app->get('/error', function () use ($app) {
  */
 $app->get('/complete/{zipfile}', function ($zipfile) use ($app) {
 	echo $app->render('index/complete', array(
-    'zipfile' => $zipfile
-    ));
+		'zipfile' => $zipfile
+		));
 });
 
 /**
