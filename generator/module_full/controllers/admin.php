@@ -2,11 +2,11 @@
 /**
  * {description}
  *
- * @author 		{author}
- * @website		{website}
- * @package 	{package}
- * @subpackage 	{subpackage}
- * @copyright 	{copyright}
+ * @author       {author}
+ * @website      {website}
+ * @package      {package}
+ * @subpackage   {subpackage}
+ * @copyright    {copyright}
  */
 class Admin extends Admin_Controller
 {
