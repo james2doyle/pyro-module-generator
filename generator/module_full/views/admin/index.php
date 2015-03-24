@@ -14,13 +14,6 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tfoot>
-				<tr>
-					<td colspan="5">
-						<div class="inner"><?php $this->load->view('admin/partials/pagination'); ?></div>
-					</td>
-				</tr>
-			</tfoot>
 			<tbody>
 				<?php foreach( ${module_name_l} as $item ): ?>
 				<tr id="item_<?php echo $item->id; ?>">
@@ -35,6 +28,13 @@
 				</tr>
 				<?php endforeach; ?>
 			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan="5">
+						<div class="inner"><?php $this->load->view('admin/partials/pagination'); ?></div>
+					</td>
+				</tr>
+			</tfoot>
 		</table>
 		<div class="table_action_buttons">
 			<?php $this->load->view('admin/partials/buttons', array('buttons' => array('delete'))); ?>
