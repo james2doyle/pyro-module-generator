@@ -24,3 +24,5 @@ nbproject
 cache/volt/*.php
 public/generated/
 !public/generate/index.html
+
+*.sublime-*
