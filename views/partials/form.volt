@@ -1,5 +1,5 @@
-<hr>
 <div class="new-field" id="field-{{ count }}">
+  <hr>
   <div class="form-group">
     <label>Field Name</label>
     <input required class="form-control" type="text" name="fields[{{ count }}][text]" value="" placeholder="Field Name">

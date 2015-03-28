@@ -20,8 +20,10 @@ function toggleRemoveBtn() {
 }
 function removeField(event) {
   event.preventDefault();
-  $('.new-field').last().remove();
-  toggleRemoveBtn();
+  if (confirm('Remove the last field from this form?')) {
+    $('.new-field').last().remove();
+    toggleRemoveBtn();
+  }
   return false;
 }
 jQuery(document).ready(function($) {

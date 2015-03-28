@@ -68,9 +68,9 @@
 				{# include the main form by itself #}
 				{{ partial("partials/form") }}
 			</div>
-			<button class="btn btn-danger" id="removeField" style="display: none">Remove This Field</button>
 			<button class="btn btn-primary" id="addField">Add Another Field</button>
 			<button type="submit" name="generate" value="Generate" class="btn btn-success">Generate Module</button>
+			<button class="btn btn-danger" id="removeField" style="display: none">Remove This Field</button>
 		</div>
 	</div>
 </form>
