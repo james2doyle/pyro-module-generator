@@ -58,9 +58,10 @@ class Admin extends Admin_Controller
 		if($this->form_validation->run())
 		{
 			// See if the model can create the record
-			if($this->{module_name_l}_m->create($this->input->post()))
+			if($id = $this->{module_name_l}_m->create($this->input->post()))
 			{
 				// All good...
+				// Events::trigger('{module_name_l}_created', $id);
 				$this->session->set_flashdata('success', lang('{module_name_l}.success'));
 				redirect('admin/{module_name_l}');
 			}
@@ -104,6 +105,7 @@ class Admin extends Admin_Controller
 			if($this->{module_name_l}_m->edit($id, $this->input->post()))
 			{
 				// All good...
+				// Events::trigger('{module_name_l}_updated', $id);
 				$this->session->set_flashdata('success', lang('{module_name_l}.success'));
 				redirect('admin/{module_name_l}');
 			}
@@ -134,15 +136,21 @@ class Admin extends Admin_Controller
 		if (isset($_POST['btnAction']) AND is_array($_POST['action_to']))
 		{
 			// pass the ids and let MY_Model delete the items
+			$ids = $this->input->post('action_to');
 			$this->{module_name_l}_m->delete_many($this->input->post('action_to'));
+			foreach ($ids as $id) {
+				// Events::trigger('{module_name_l}_deleted', $id);
+			}
 		}
 		elseif (is_numeric($id))
 		{
 			// they just clicked the link so we'll delete that one
 			$this->{module_name_l}_m->delete($id);
+			// Events::trigger('{module_name_l}_deleted', $id);
 		}
 		redirect('admin/{module_name_l}');
 	}
+
 	public function order() {
 		$items = $this->input->post('items');
 		$i = 0;
