@@ -39,10 +39,16 @@ class Admin extends Admin_Controller
 	 */
 	public function index()
 	{
-		${module_name_l} = $this->{module_name_l}_m->order_by('order')->get_all();
-			$this->template
+		$total_rows = $this->{module_name_l}_m->count_all();
+		$pagination = create_pagination('admin/{module_name_l}/index', $total_rows);
+		${module_name_l} = $this->{module_name_l}_m
+		->limit($pagination['limit'], $pagination['offset'])
+		->order_by('order')->get_all();
+
+		$this->template
 		->title($this->module_details['name'])
 		->set('{module_name_l}', ${module_name_l})
+		->set('pagination', $pagination)
 		->build('admin/index');
 	}
 
