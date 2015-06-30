@@ -60,10 +60,7 @@ class Events_{module_name_l} {
 
 	public function drop_{module_name_l}($ids)
 	{
-		foreach ($ids as $id)
-		{
-			$this->ci->search_index_m->drop_index('{module_name_l}', '{module_name_l}:{module_name_l}', $id);
-		}
+		$this->ci->search_index_m->drop_index('{module_name_l}', '{module_name_l}:{module_name_l}', $id);
 	}
 
 }
